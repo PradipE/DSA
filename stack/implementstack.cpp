@@ -1,70 +1,62 @@
 #include<iostream>
 using namespace std;
-class stack{
 
-    public:
-    int *arr;
+ class stack{
+
+   public:
+    int* arr;
     int top;
     int size;
-    //some behaviour or a constructor
+
     stack(int size)
     {
-        this->size=size;
-        arr=new int[size];
+        this->size = size;
+        arr= new int[size];
         top=-1;
     }
+
     void push(int element)
     {
-         if (size-top > 1)
-         {
+        if(size-top > 1)
+        {
             top++;
             arr[top]=element;
-         }
-         else
-         {
-            cout<<"Stack is full you can't insert element"<<endl;
-         }
-         
+        }else{
+            cout<<"stack is full";
+        }
     }
     void pop()
     {
-        if(top >= 0)
+        if(top > 0)
         {
             top--;
         }
-        else
-        {
-             cout<<"Stack is empty you can't remove element"<<endl;
+        else{
+            cout<<"Stack is empty";
         }
     }
     int topp()
     {
-        if(top >=0)
+        if(top >= 0)
         {
-           return arr[top];  
+            return arr[top];
         }
         else
         {
-             return -1;
-        }    
+            return -1;
+        }
     }
-    bool isempty()
+    
+    ~stack()
     {
-        if(top == -1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        delete[] arr;
     }
 };
 int main()
 {
-    stack st(5);
-    st.push(1);
-    st.push(2);
+    stack st(3);
+
+    st.top;
     st.push(3);
-    std::cout << st << std::endl;
+    
 }

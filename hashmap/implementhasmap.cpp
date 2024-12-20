@@ -1,32 +1,32 @@
+// Online C++ compiler to run C++ program online
 #include<bits/stdc++.h>
 using namespace std;
-// we have a arr [1,2,1,2,3,2,4,3,5]
-//  Find how many time 1, 2
-int main()
-{
-  int n;
-  cin>>n;
-  int arr[n];
-  for(int i=0;i<n;i++)
-  {
-    cin>> arr[i];
-  }
-  //create the hash arr to track the list
-  int hasharr[20]={0};
-  for(int i=0;i<n;i++)
-  {
-    hasharr[arr[i]]+=1;
 
-  }
+int main() {
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    {
+         cin>>arr[i];
+    }
+    //create the hash arr
+    int hasharr[20]={0};
+    for(int i=0;i<n;i++)
+    {
+        hasharr[arr[i]] +=1;
+        
+    }
+    //print the array data thats are apperar how many times
+    int print ;
+    cin>>print;
+    while(print--)
+    {
+        int data;
+        cin>>data;
+        
+        cout<<hasharr[data]<<endl;
+    }
 
-  //for search the element those who are present in arr
-  int queary;
-  cin>> queary;
-  while(queary--)
-  {
-    int number;
-    cin>>number;
-    cout<<hasharr[number]<<endl;
-  }
-  return 0;
+    return 0;
 }
